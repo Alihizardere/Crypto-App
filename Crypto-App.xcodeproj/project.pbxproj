@@ -7,15 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D2EC62C2BE6C88300B89F3F /* CoinLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EC62B2BE6C88300B89F3F /* CoinLogic.swift */; };
+		3D2EC62E2BE6C9CB00B89F3F /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EC62D2BE6C9CB00B89F3F /* Webservice.swift */; };
+		3D2EC6312BE6CAD800B89F3F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3D2EC6302BE6CAD800B89F3F /* Alamofire */; };
+		3D2EC6332BE6CAD800B89F3F /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 3D2EC6322BE6CAD800B89F3F /* AlamofireDynamic */; };
+		3D2EC6352BE6CCF900B89F3F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EC6342BE6CCF900B89F3F /* Router.swift */; };
 		3D91622B2BE6B98300441BF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D91622A2BE6B98300441BF9 /* AppDelegate.swift */; };
 		3D91622D2BE6B98300441BF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D91622C2BE6B98300441BF9 /* SceneDelegate.swift */; };
 		3D91622F2BE6B98300441BF9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D91622E2BE6B98300441BF9 /* HomeViewController.swift */; };
 		3D9162322BE6B98300441BF9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 3D9162312BE6B98300441BF9 /* Base */; };
 		3D9162342BE6B98400441BF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D9162332BE6B98400441BF9 /* Assets.xcassets */; };
 		3D9162372BE6B98400441BF9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 3D9162362BE6B98400441BF9 /* Base */; };
+		3D9162472BE6C59F00441BF9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9162462BE6C59F00441BF9 /* Constants.swift */; };
+		3D9162492BE6C5F800441BF9 /* CoinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9162482BE6C5F800441BF9 /* CoinResponse.swift */; };
+		3D91624C2BE6C6BF00441BF9 /* CoinLogicProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D91624B2BE6C6BF00441BF9 /* CoinLogicProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D2EC62B2BE6C88300B89F3F /* CoinLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinLogic.swift; sourceTree = "<group>"; };
+		3D2EC62D2BE6C9CB00B89F3F /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
+		3D2EC6342BE6CCF900B89F3F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		3D9162272BE6B98300441BF9 /* Crypto-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crypto-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D91622A2BE6B98300441BF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D91622C2BE6B98300441BF9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +35,9 @@
 		3D9162332BE6B98400441BF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D9162362BE6B98400441BF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D9162382BE6B98400441BF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D9162462BE6C59F00441BF9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3D9162482BE6C5F800441BF9 /* CoinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinResponse.swift; sourceTree = "<group>"; };
+		3D91624B2BE6C6BF00441BF9 /* CoinLogicProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinLogicProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +45,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D2EC6312BE6CAD800B89F3F /* Alamofire in Frameworks */,
+				3D2EC6332BE6CAD800B89F3F /* AlamofireDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +73,7 @@
 		3D9162292BE6B98300441BF9 /* Crypto-App */ = {
 			isa = PBXGroup;
 			children = (
+				3D91624A2BE6C6A400441BF9 /* Network */,
 				3D9162452BE6BBB100441BF9 /* Constants */,
 				3D9162442BE6BBA500441BF9 /* Model */,
 				3D9162432BE6BAD000441BF9 /* Controller */,
@@ -96,6 +113,7 @@
 		3D9162442BE6BBA500441BF9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3D9162482BE6C5F800441BF9 /* CoinResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -103,8 +121,20 @@
 		3D9162452BE6BBB100441BF9 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				3D9162462BE6C59F00441BF9 /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		3D91624A2BE6C6A400441BF9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3D91624B2BE6C6BF00441BF9 /* CoinLogicProtocol.swift */,
+				3D2EC62B2BE6C88300B89F3F /* CoinLogic.swift */,
+				3D2EC62D2BE6C9CB00B89F3F /* Webservice.swift */,
+				3D2EC6342BE6CCF900B89F3F /* Router.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +153,10 @@
 			dependencies = (
 			);
 			name = "Crypto-App";
+			packageProductDependencies = (
+				3D2EC6302BE6CAD800B89F3F /* Alamofire */,
+				3D2EC6322BE6CAD800B89F3F /* AlamofireDynamic */,
+			);
 			productName = "Crypto-App";
 			productReference = 3D9162272BE6B98300441BF9 /* Crypto-App.app */;
 			productType = "com.apple.product-type.application";
@@ -151,6 +185,9 @@
 				Base,
 			);
 			mainGroup = 3D91621E2BE6B98300441BF9;
+			packageReferences = (
+				3D2EC62F2BE6CAD800B89F3F /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 3D9162282BE6B98300441BF9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -178,9 +215,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D2EC62C2BE6C88300B89F3F /* CoinLogic.swift in Sources */,
 				3D91622F2BE6B98300441BF9 /* HomeViewController.swift in Sources */,
+				3D2EC62E2BE6C9CB00B89F3F /* Webservice.swift in Sources */,
 				3D91622B2BE6B98300441BF9 /* AppDelegate.swift in Sources */,
+				3D2EC6352BE6CCF900B89F3F /* Router.swift in Sources */,
 				3D91622D2BE6B98300441BF9 /* SceneDelegate.swift in Sources */,
+				3D9162492BE6C5F800441BF9 /* CoinResponse.swift in Sources */,
+				3D9162472BE6C59F00441BF9 /* Constants.swift in Sources */,
+				3D91624C2BE6C6BF00441BF9 /* CoinLogicProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +444,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3D2EC62F2BE6CAD800B89F3F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3D2EC6302BE6CAD800B89F3F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D2EC62F2BE6CAD800B89F3F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		3D2EC6322BE6CAD800B89F3F /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D2EC62F2BE6CAD800B89F3F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3D91621F2BE6B98300441BF9 /* Project object */;
 }
