@@ -17,6 +17,6 @@ final class CoinLogic: CoinLogicProtocol {
   private init() {}
 
   func getAllCoins(completionHandler: @escaping (Result<CoinResponse, any Error>) -> Void) {
-    <#code#>
+    Webservice.shared.request(request: Router.allCoins, decodeType: CoinResponse.self, completionHandler: completionHandler)
   }
 }
