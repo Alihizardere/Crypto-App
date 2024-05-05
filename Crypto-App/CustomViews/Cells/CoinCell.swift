@@ -6,30 +6,38 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CoinCell: UITableViewCell {
 
+  // MARK: - Properties
   static let identifier = "CoinCell"
   @IBOutlet weak var coinImageView: UIImageView!
   @IBOutlet weak var symbolLabel: UILabel!
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var priceLabel: UILabel!
   @IBOutlet weak var changeLabel: UILabel!
+  @IBOutlet weak var cardView: UIView!
+
+  // MARK: - Lifecycle
   override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    super.awakeFromNib()
+    cardView.addShadow()
+  }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+  override func setSelected(_ selected: Bool, animated: Bool) {
+    super.setSelected(selected, animated: animated)
+  }
 
-        // Configure the view for the selected state
-    }
-    
+  // MARK: - Functions
   func configure(coin: Coin){
     self.nameLabel.text = coin.name
     self.symbolLabel.text = coin.symbol
-    self.priceLabel.text = coin.price
-    self.changeLabel.text = coin.change
+    priceLabel.text = "$\(Double(coin.price)?.formattedPrice() ?? "0.0")"
+    self.changeLabel.text = "\(coin.change)%"
+
+    let iconUrlString = coin.iconUrl.replacingOccurrences(of: "svg", with: "png")
+    guard let iconUrl = URL(string: iconUrlString) else { return }
+    self.coinImageView.kf.setImage(with: iconUrl)
   }
 }

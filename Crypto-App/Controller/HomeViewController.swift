@@ -15,9 +15,9 @@ class HomeViewController: UIViewController {
   // MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .red
     tableView.delegate = self
     tableView.dataSource = self
+    tableView.showsVerticalScrollIndicator = false
     tableView.register(UINib(nibName: CoinCell.identifier, bundle: nil), forCellReuseIdentifier: CoinCell.identifier)
 
     CoinLogic.shared.getAllCoins { [weak self] result in
@@ -46,6 +46,19 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     let coin = coins[indexPath.row]
     cell.configure(coin: coin)
     return cell
+  }
+
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let coin = coins[indexPath.row]
+    performSegue(withIdentifier: "toDetail", sender: coin)
+  }
+
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "toDetail" {
+      let destinationVC = segue.destination as! DetailViewController
+      guard let coin = sender as? Coin  else { return }
+      destinationVC.selectedCoin = coin
+    }
   }
 }
 
