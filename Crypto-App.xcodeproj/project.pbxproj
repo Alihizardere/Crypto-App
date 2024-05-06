@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D0DDF3A2BE8CB1D00C63676 /* CustomTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0DDF392BE8CB1D00C63676 /* CustomTitleView.swift */; };
+		3D0DDF3D2BE9117A00C63676 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0DDF3C2BE9117A00C63676 /* UIColor+Extension.swift */; };
 		3D2EC62C2BE6C88300B89F3F /* CoinLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EC62B2BE6C88300B89F3F /* CoinLogic.swift */; };
 		3D2EC62E2BE6C9CB00B89F3F /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2EC62D2BE6C9CB00B89F3F /* Webservice.swift */; };
 		3D2EC6312BE6CAD800B89F3F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3D2EC6302BE6CAD800B89F3F /* Alamofire */; };
@@ -32,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D0DDF392BE8CB1D00C63676 /* CustomTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTitleView.swift; sourceTree = "<group>"; };
+		3D0DDF3C2BE9117A00C63676 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		3D2EC62B2BE6C88300B89F3F /* CoinLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinLogic.swift; sourceTree = "<group>"; };
 		3D2EC62D2BE6C9CB00B89F3F /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
 		3D2EC6342BE6CCF900B89F3F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -69,9 +73,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D0DDF382BE8CAF400C63676 /* CustomNavbar */ = {
+			isa = PBXGroup;
+			children = (
+				3D0DDF392BE8CB1D00C63676 /* CustomTitleView.swift */,
+			);
+			path = CustomNavbar;
+			sourceTree = "<group>";
+		};
 		3D2EC6362BE6D02300B89F3F /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				3D0DDF382BE8CAF400C63676 /* CustomNavbar */,
 				3D2EC6372BE6D03B00B89F3F /* Cells */,
 			);
 			path = CustomViews;
@@ -178,6 +191,7 @@
 			children = (
 				3DAADFFF2BE81EC2003A5C33 /* Format+Extension.swift */,
 				3DAAE0012BE83206003A5C33 /* UIView+Extension.swift */,
+				3D0DDF3C2BE9117A00C63676 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -289,7 +303,9 @@
 				3D91622B2BE6B98300441BF9 /* AppDelegate.swift in Sources */,
 				3D2EC6352BE6CCF900B89F3F /* Router.swift in Sources */,
 				3DAAE00B2BE83B57003A5C33 /* RankingCell.swift in Sources */,
+				3D0DDF3D2BE9117A00C63676 /* UIColor+Extension.swift in Sources */,
 				3DAAE0002BE81EC2003A5C33 /* Format+Extension.swift in Sources */,
+				3D0DDF3A2BE8CB1D00C63676 /* CustomTitleView.swift in Sources */,
 				3DAAE0022BE83206003A5C33 /* UIView+Extension.swift in Sources */,
 				3D91622D2BE6B98300441BF9 /* SceneDelegate.swift in Sources */,
 				3D2EC63A2BE6D08F00B89F3F /* CoinCell.swift in Sources */,

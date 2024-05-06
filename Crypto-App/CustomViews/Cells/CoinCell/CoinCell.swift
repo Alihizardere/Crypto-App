@@ -18,6 +18,7 @@ class CoinCell: UITableViewCell {
   @IBOutlet weak var priceLabel: UILabel!
   @IBOutlet weak var changeLabel: UILabel!
   @IBOutlet weak var cardView: UIView!
+  var color: String?
 
   // MARK: - Lifecycle
   override func awakeFromNib() {
@@ -33,11 +34,15 @@ class CoinCell: UITableViewCell {
   func configure(coin: Coin){
     self.nameLabel.text = coin.name
     self.symbolLabel.text = coin.symbol
-    priceLabel.text = "$\(Double(coin.price)?.formattedPrice() ?? "0.0")"
+    priceLabel.text = "$\(Double(coin.price)?.formattedPrice(decimalCount: 5) ?? "0.0")"
     self.changeLabel.text = "\(coin.change)%"
 
     let iconUrlString = coin.iconUrl.replacingOccurrences(of: "svg", with: "png")
     guard let iconUrl = URL(string: iconUrlString) else { return }
     self.coinImageView.kf.setImage(with: iconUrl)
+
+    color = coin.color
+    cardView.layer.borderWidth = 2
+    cardView.layer.borderColor = UIColor(hex: color ?? "white").cgColor
   }
 }
