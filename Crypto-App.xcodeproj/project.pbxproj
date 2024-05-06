@@ -27,6 +27,8 @@
 		3DAAE0002BE81EC2003A5C33 /* Format+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAADFFF2BE81EC2003A5C33 /* Format+Extension.swift */; };
 		3DAAE0022BE83206003A5C33 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAAE0012BE83206003A5C33 /* UIView+Extension.swift */; };
 		3DAAE0042BE83321003A5C33 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAAE0032BE83321003A5C33 /* DetailViewController.swift */; };
+		3DAAE00B2BE83B57003A5C33 /* RankingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAAE0092BE83B57003A5C33 /* RankingCell.swift */; };
+		3DAAE00C2BE83B57003A5C33 /* RankingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DAAE00A2BE83B57003A5C33 /* RankingCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		3DAADFFF2BE81EC2003A5C33 /* Format+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Format+Extension.swift"; sourceTree = "<group>"; };
 		3DAAE0012BE83206003A5C33 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		3DAAE0032BE83321003A5C33 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3DAAE0092BE83B57003A5C33 /* RankingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCell.swift; sourceTree = "<group>"; };
+		3DAAE00A2BE83B57003A5C33 /* RankingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankingCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +80,8 @@
 		3D2EC6372BE6D03B00B89F3F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				3D2EC6382BE6D08F00B89F3F /* CoinCell.swift */,
-				3D2EC6392BE6D08F00B89F3F /* CoinCell.xib */,
+				3DAAE0062BE83AD2003A5C33 /* RankingCell */,
+				3DAAE0052BE83AC1003A5C33 /* CoinCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -178,6 +182,24 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		3DAAE0052BE83AC1003A5C33 /* CoinCell */ = {
+			isa = PBXGroup;
+			children = (
+				3D2EC6382BE6D08F00B89F3F /* CoinCell.swift */,
+				3D2EC6392BE6D08F00B89F3F /* CoinCell.xib */,
+			);
+			path = CoinCell;
+			sourceTree = "<group>";
+		};
+		3DAAE0062BE83AD2003A5C33 /* RankingCell */ = {
+			isa = PBXGroup;
+			children = (
+				3DAAE0092BE83B57003A5C33 /* RankingCell.swift */,
+				3DAAE00A2BE83B57003A5C33 /* RankingCell.xib */,
+			);
+			path = RankingCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -247,6 +269,7 @@
 			files = (
 				3D9162342BE6B98400441BF9 /* Assets.xcassets in Resources */,
 				3D9162372BE6B98400441BF9 /* Base in Resources */,
+				3DAAE00C2BE83B57003A5C33 /* RankingCell.xib in Resources */,
 				3D2EC63B2BE6D08F00B89F3F /* CoinCell.xib in Resources */,
 				3D9162322BE6B98300441BF9 /* Base in Resources */,
 			);
@@ -265,6 +288,7 @@
 				3D2EC62E2BE6C9CB00B89F3F /* Webservice.swift in Sources */,
 				3D91622B2BE6B98300441BF9 /* AppDelegate.swift in Sources */,
 				3D2EC6352BE6CCF900B89F3F /* Router.swift in Sources */,
+				3DAAE00B2BE83B57003A5C33 /* RankingCell.swift in Sources */,
 				3DAAE0002BE81EC2003A5C33 /* Format+Extension.swift in Sources */,
 				3DAAE0022BE83206003A5C33 /* UIView+Extension.swift in Sources */,
 				3D91622D2BE6B98300441BF9 /* SceneDelegate.swift in Sources */,

@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9bX-si-Wvt">
-                                <rect key="frame" x="0.0" y="201" width="393" height="617"/>
+                                <rect key="frame" x="0.0" y="257" width="393" height="561"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="secondarySystemBackgroundColor"/>
                             </tableView>
@@ -27,20 +28,47 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UZL-eH-5gd">
+                                <rect key="frame" x="16" y="201" width="377" height="40"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="uOd-R6-GfG"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CG3-C6-eWa">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="duJ-Bg-HV4">
+                                        <rect key="frame" x="0.0" y="-44" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="OkH-21-QFe">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9bX-si-Wvt" secondAttribute="bottom" id="AN7-Mg-tet"/>
+                            <constraint firstItem="9bX-si-Wvt" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2Ht-C7-JPR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UZL-eH-5gd" secondAttribute="trailing" id="5FH-TH-uvw"/>
                             <constraint firstItem="x5M-LU-sVY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="CAv-L2-Erz"/>
-                            <constraint firstItem="9bX-si-Wvt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="L6T-Qq-KGh"/>
+                            <constraint firstItem="UZL-eH-5gd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="KhQ-3S-pVj"/>
                             <constraint firstItem="x5M-LU-sVY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="Poh-ld-Aff"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9bX-si-Wvt" secondAttribute="trailing" id="eRd-HH-UkU"/>
-                            <constraint firstItem="9bX-si-Wvt" firstAttribute="top" secondItem="x5M-LU-sVY" secondAttribute="bottom" constant="16" id="zTl-Kh-juK"/>
+                            <constraint firstItem="9bX-si-Wvt" firstAttribute="top" secondItem="UZL-eH-5gd" secondAttribute="bottom" constant="16" id="UAH-Mo-7tf"/>
+                            <constraint firstItem="9bX-si-Wvt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lc6-Le-3Uj"/>
+                            <constraint firstItem="9bX-si-Wvt" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="yDS-Ad-dYB"/>
+                            <constraint firstItem="UZL-eH-5gd" firstAttribute="top" secondItem="x5M-LU-sVY" secondAttribute="bottom" constant="16" id="zN8-Kx-5at"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Crypto" id="3cA-fk-dtD"/>
                     <connections>
+                        <outlet property="collectionView" destination="UZL-eH-5gd" id="dnt-NC-4H6"/>
                         <outlet property="tableView" destination="9bX-si-Wvt" id="zUr-nY-bO6"/>
                         <segue destination="Lu7-pn-dhj" kind="show" identifier="toDetail" id="JQp-r7-kh1"/>
                     </connections>
