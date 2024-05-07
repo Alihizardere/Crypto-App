@@ -16,10 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9bX-si-Wvt">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9bX-si-Wvt">
                                 <rect key="frame" x="0.0" y="257" width="393" height="561"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="sectionIndexBackgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ranking List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5M-LU-sVY">
                                 <rect key="frame" x="16.000000000000007" y="163" width="100.66666666666669" height="22"/>
@@ -65,7 +64,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="982.44274809160299" y="-34.507042253521128"/>
+            <point key="canvasLocation" x="1909.1603053435115" y="-34.507042253521128"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Ssk-eh-0Qh">
@@ -148,21 +147,145 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8gL-Ii-5cM" customClass="ChartView" customModule="Crypto_App" customModuleProvider="target">
+                                <rect key="frame" x="16" y="285.66666666666669" width="361" height="281.00000000000006"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Bfn-V2-0Wo">
+                                <rect key="frame" x="16" y="574.66666666666663" width="361" height="34.333333333333371"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Wp-O7-ldh">
+                                        <rect key="frame" x="0.0" y="0.0" width="48.333333333333336" height="34.333333333333336"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="1H">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                <color key="value" systemColor="systemTealColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5VH-DB-Jzt">
+                                        <rect key="frame" x="56.333333333333329" y="0.0" width="62.666666666666671" height="34.333333333333336"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="24H">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                <color key="value" systemColor="systemTealColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zy2-Lk-Qxs">
+                                        <rect key="frame" x="127.00000000000001" y="0.0" width="49.666666666666671" height="34.333333333333336"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="7D">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                <color key="value" systemColor="systemTealColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m0S-RW-R83">
+                                        <rect key="frame" x="184.66666666666666" y="0.0" width="62.333333333333343" height="34.333333333333336"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="30D">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                <color key="value" systemColor="systemTealColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mek-O8-ATP">
+                                        <rect key="frame" x="255" y="0.0" width="47" height="34.333333333333336"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="1Y">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                <color key="value" systemColor="systemTealColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53E-Kx-1Wx">
+                                        <rect key="frame" x="310" y="0.0" width="51" height="34.333333333333336"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="All">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="2"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                <color key="value" systemColor="systemTealColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXH-Xg-yxs">
+                                <rect key="frame" x="49" y="631" width="62" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="1H">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="17"/>
+                                    <color key="baseForegroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="baseBackgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OpO-gq-wxN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Bfn-V2-0Wo" firstAttribute="leading" secondItem="OpO-gq-wxN" secondAttribute="leading" constant="16" id="1lm-rh-4oU"/>
+                            <constraint firstItem="8gL-Ii-5cM" firstAttribute="height" secondItem="tx5-e6-G4y" secondAttribute="height" multiplier="0.33" id="39c-cC-bky"/>
                             <constraint firstItem="OpO-gq-wxN" firstAttribute="trailing" secondItem="UKT-vc-CGb" secondAttribute="trailing" constant="16" id="3jl-5S-aGs"/>
+                            <constraint firstItem="Bfn-V2-0Wo" firstAttribute="top" secondItem="8gL-Ii-5cM" secondAttribute="bottom" constant="8" id="5Lz-pJ-D3O"/>
+                            <constraint firstItem="XXH-Xg-yxs" firstAttribute="leading" secondItem="OpO-gq-wxN" secondAttribute="leading" constant="49" id="7A5-gK-Ldy"/>
                             <constraint firstItem="UKT-vc-CGb" firstAttribute="centerY" secondItem="Pst-A6-qeL" secondAttribute="centerY" id="Kzt-Hg-iEz"/>
+                            <constraint firstItem="XXH-Xg-yxs" firstAttribute="top" secondItem="Bfn-V2-0Wo" secondAttribute="bottom" constant="22" id="Npo-KX-I0e"/>
                             <constraint firstItem="e6L-Aw-W4x" firstAttribute="leading" secondItem="OpO-gq-wxN" secondAttribute="leading" constant="8" id="UJt-lO-eZU"/>
+                            <constraint firstItem="OpO-gq-wxN" firstAttribute="trailing" secondItem="Bfn-V2-0Wo" secondAttribute="trailing" constant="16" id="bQv-uI-e06"/>
                             <constraint firstItem="e6L-Aw-W4x" firstAttribute="top" secondItem="OpO-gq-wxN" secondAttribute="top" constant="16" id="hwT-KD-pA4"/>
                             <constraint firstItem="Pst-A6-qeL" firstAttribute="top" secondItem="e6L-Aw-W4x" secondAttribute="bottom" constant="16" id="jlC-RC-sJv"/>
+                            <constraint firstItem="OpO-gq-wxN" firstAttribute="trailing" secondItem="8gL-Ii-5cM" secondAttribute="trailing" constant="16" id="kZY-Qd-x91"/>
                             <constraint firstItem="Pst-A6-qeL" firstAttribute="leading" secondItem="OpO-gq-wxN" secondAttribute="leading" constant="8" id="nsf-Hu-7gR"/>
+                            <constraint firstItem="OpO-gq-wxN" firstAttribute="trailing" secondItem="XXH-Xg-yxs" secondAttribute="trailing" constant="282" id="qSH-WD-0TI"/>
+                            <constraint firstItem="8gL-Ii-5cM" firstAttribute="top" secondItem="Pst-A6-qeL" secondAttribute="bottom" constant="16" id="sDU-tC-bEA"/>
+                            <constraint firstItem="8gL-Ii-5cM" firstAttribute="leading" secondItem="OpO-gq-wxN" secondAttribute="leading" constant="16" id="z8Q-Rk-anD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BdW-zG-Liz"/>
                     <connections>
                         <outlet property="changeLabel" destination="AU5-hM-nEM" id="3QQ-KZ-NHT"/>
+                        <outlet property="chartView" destination="8gL-Ii-5cM" id="wOb-OQ-DFR"/>
                         <outlet property="highLabel" destination="YLa-19-QdB" id="mNE-fS-5Ch"/>
                         <outlet property="lowLabel" destination="5o5-iD-qWU" id="5ot-xC-eix"/>
                         <outlet property="priceLabel" destination="LEB-pQ-lH5" id="h2Y-6E-idb"/>
@@ -170,12 +293,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="maj-iB-7P1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1773.2824427480916" y="-35.211267605633807"/>
+            <point key="canvasLocation" x="2700" y="-35.211267605633807"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="1cO-CQ-EuM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GBn-86-7eU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="homekit" catalog="system" id="8m7-Q2-eD0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="MIr-ax-q0r">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
@@ -189,10 +313,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tz6-vc-aXG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="55.725190839694655" y="-34.507042253521128"/>
+            <point key="canvasLocation" x="982.44274809160299" y="-34.507042253521128"/>
         </scene>
     </scenes>
     <resources>
+        <image name="homekit" catalog="system" width="128" height="104"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
@@ -201,6 +326,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

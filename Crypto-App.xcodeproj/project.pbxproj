@@ -25,6 +25,7 @@
 		3D9162472BE6C59F00441BF9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9162462BE6C59F00441BF9 /* Constants.swift */; };
 		3D9162492BE6C5F800441BF9 /* CoinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9162482BE6C5F800441BF9 /* CoinResponse.swift */; };
 		3D91624C2BE6C6BF00441BF9 /* CoinLogicProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D91624B2BE6C6BF00441BF9 /* CoinLogicProtocol.swift */; };
+		3D91C4932BE9A33C00EC04F0 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D91C4922BE9A33C00EC04F0 /* ChartView.swift */; };
 		3DAADFFD2BE811E5003A5C33 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3DAADFFC2BE811E5003A5C33 /* Kingfisher */; };
 		3DAAE0002BE81EC2003A5C33 /* Format+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAADFFF2BE81EC2003A5C33 /* Format+Extension.swift */; };
 		3DAAE0022BE83206003A5C33 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAAE0012BE83206003A5C33 /* UIView+Extension.swift */; };
@@ -52,6 +53,7 @@
 		3D9162462BE6C59F00441BF9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3D9162482BE6C5F800441BF9 /* CoinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinResponse.swift; sourceTree = "<group>"; };
 		3D91624B2BE6C6BF00441BF9 /* CoinLogicProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinLogicProtocol.swift; sourceTree = "<group>"; };
+		3D91C4922BE9A33C00EC04F0 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		3DAADFFF2BE81EC2003A5C33 /* Format+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Format+Extension.swift"; sourceTree = "<group>"; };
 		3DAAE0012BE83206003A5C33 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		3DAAE0032BE83321003A5C33 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -73,18 +75,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3D0DDF382BE8CAF400C63676 /* CustomNavbar */ = {
+		3D0DDF382BE8CAF400C63676 /* NavbarTitleView */ = {
 			isa = PBXGroup;
 			children = (
 				3D0DDF392BE8CB1D00C63676 /* CustomTitleView.swift */,
 			);
-			path = CustomNavbar;
+			path = NavbarTitleView;
 			sourceTree = "<group>";
 		};
 		3D2EC6362BE6D02300B89F3F /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				3D0DDF382BE8CAF400C63676 /* CustomNavbar */,
+				3D91C4942BE9A34F00EC04F0 /* ChartView */,
+				3D0DDF382BE8CAF400C63676 /* NavbarTitleView */,
 				3D2EC6372BE6D03B00B89F3F /* Cells */,
 			);
 			path = CustomViews;
@@ -184,6 +187,14 @@
 				3D2EC6342BE6CCF900B89F3F /* Router.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		3D91C4942BE9A34F00EC04F0 /* ChartView */ = {
+			isa = PBXGroup;
+			children = (
+				3D91C4922BE9A33C00EC04F0 /* ChartView.swift */,
+			);
+			path = ChartView;
 			sourceTree = "<group>";
 		};
 		3DAADFFE2BE81E96003A5C33 /* Extensions */ = {
@@ -310,6 +321,7 @@
 				3D91622D2BE6B98300441BF9 /* SceneDelegate.swift in Sources */,
 				3D2EC63A2BE6D08F00B89F3F /* CoinCell.swift in Sources */,
 				3D9162492BE6C5F800441BF9 /* CoinResponse.swift in Sources */,
+				3D91C4932BE9A33C00EC04F0 /* ChartView.swift in Sources */,
 				3D9162472BE6C59F00441BF9 /* Constants.swift in Sources */,
 				3D91624C2BE6C6BF00441BF9 /* CoinLogicProtocol.swift in Sources */,
 			);

@@ -13,17 +13,16 @@ class CoinCell: UITableViewCell {
   // MARK: - Properties
   static let identifier = "CoinCell"
   @IBOutlet weak var coinImageView: UIImageView!
+  @IBOutlet weak var shadowView: UIView!
   @IBOutlet weak var symbolLabel: UILabel!
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var priceLabel: UILabel!
   @IBOutlet weak var changeLabel: UILabel!
   @IBOutlet weak var cardView: UIView!
-  var color: String?
 
   // MARK: - Lifecycle
   override func awakeFromNib() {
     super.awakeFromNib()
-    cardView.addShadow()
   }
 
   override func setSelected(_ selected: Bool, animated: Bool) {
@@ -32,17 +31,26 @@ class CoinCell: UITableViewCell {
 
   // MARK: - Functions
   func configure(coin: Coin){
-    self.nameLabel.text = coin.name
-    self.symbolLabel.text = coin.symbol
+    nameLabel.text = coin.name
+    symbolLabel.text = coin.symbol
     priceLabel.text = "$\(Double(coin.price)?.formattedPrice(decimalCount: 5) ?? "0.0")"
-    self.changeLabel.text = "\(coin.change)%"
+    changeLabel.text = "\(coin.change)%"
+    guard let changeValue = Double(coin.change) else  {
+      changeLabel.textColor = .black
+      return
+    }
+    changeLabel.textColor = changeValue < 0 ? .red : .green
 
     let iconUrlString = coin.iconUrl.replacingOccurrences(of: "svg", with: "png")
     guard let iconUrl = URL(string: iconUrlString) else { return }
-    self.coinImageView.kf.setImage(with: iconUrl)
+    coinImageView.kf.setImage(with: iconUrl)
+    shadowView.backgroundColor = UIColor(hex: coin.color ?? "#fff").withAlphaComponent(0.3)
+    shadowView.layer.cornerRadius = 30
+    cardView.addShadow()
+  }
 
-    color = coin.color
-    cardView.layer.borderWidth = 2
-    cardView.layer.borderColor = UIColor(hex: color ?? "white").cgColor
+  private func colorForChange(change: String) -> UIColor {
+    guard let changeValue = Double(change) else { return .black }
+    return changeValue < 0 ? .red :  .green
   }
 }

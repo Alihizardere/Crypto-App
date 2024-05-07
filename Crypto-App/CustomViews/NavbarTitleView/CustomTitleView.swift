@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomTitleView: UIView {
+class NavbarTitleView: UIView {
 
   var titleLabel: UILabel = {
     let label = UILabel()

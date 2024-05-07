@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
   @IBOutlet weak var collectionView: UICollectionView!
   var coins = [Coin]()
   let filterList = ["Price", "24h Vol", "Market Cap", "Change", "List Order"]
+  var selectedIndex: IndexPath?
 
   // MARK: - Lifecycle
   override func viewDidLoad() {
@@ -83,24 +84,38 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
   }
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+    if let previousIndex = selectedIndex {
+      if let previousCell = collectionView.cellForItem(at: previousIndex) as? RankingCell {
+        previousCell.contentView.backgroundColor = .clear
+        previousCell.rankLabel.textColor = .label
+      }
+    }
+    
+    if let selectedCell = collectionView.cellForItem(at: indexPath) as? RankingCell{
+      selectedCell.contentView.backgroundColor = .purple.withAlphaComponent(0.7)
+      selectedCell.rankLabel.textColor = .white
+    }
 
     let selectedFilter = filterList[indexPath.row]
 
     switch selectedFilter {
     case  "Price":
-      coins.sort{$0.price < $1.price}
+      coins.sort { Double($0.price) ?? 0 > Double($1.price) ?? 0 }
     case "24h Vol":
-      coins.sort{ $0.the24HVolume < $1.the24HVolume }
+      coins.sort { Int($0.the24HVolume) ?? 0 > Int($1.the24HVolume) ?? 0 }
     case "Market Cap":
-      coins.sort{$0.marketCap < $1.marketCap}
+      coins.sort { Int($0.marketCap) ?? 0 > Int($1.marketCap) ?? 0 }
     case "Change":
-      coins.sort{$0.change < $1.change}
+      coins.sort { Double($0.change) ?? 0 > Double($1.change) ?? 0 }
     case "List Order":
       coins.sort{$0.listedAt < $1.listedAt}
     default:
       break
     }
+
     tableView.reloadData()
+    selectedIndex = indexPath
   }
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
