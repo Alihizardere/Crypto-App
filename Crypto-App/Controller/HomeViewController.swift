@@ -12,20 +12,22 @@ class HomeViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var collectionView: UICollectionView!
   @IBOutlet weak var headerTableView: UIView!
-  var coins = [Coin]()
   let filterList = ["Price", "24h Vol", "Market Cap", "Change", "List Order"]
+  var viewModel = HomeViewModel()
   var selectedIndex: IndexPath?
 
   // MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
     setupUI()
-    
-    CoinLogic.shared.getAllCoins { [weak self] result in
-      guard let self else { return }
+    fetchData()
+  }
+
+  func fetchData() {
+    viewModel.getAllCoins { [weak self] result in
+      guard let self = self else { return }
       switch result {
-      case .success(let data):
-        self.coins = data.data.coins
+      case .success:
         DispatchQueue.main.async {
           self.tableView.reloadData()
         }
@@ -34,6 +36,7 @@ class HomeViewController: UIViewController {
       }
     }
   }
+
   private func setupUI(){
     // MARK: - TableView
     tableView.delegate = self
@@ -63,18 +66,18 @@ class HomeViewController: UIViewController {
 // MARK: - TableView Protocols
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    coins.count
+    viewModel.coins.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: CoinCell.identifier, for: indexPath) as! CoinCell
-    let coin = coins[indexPath.row]
+    let coin = viewModel.coins[indexPath.row]
     cell.configure(coin: coin)
     return cell
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let coin = coins[indexPath.row]
+    let coin = viewModel.coins[indexPath.row]
     performSegue(withIdentifier: "toDetail", sender: coin)
   }
 
@@ -118,15 +121,15 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
     switch selectedFilter {
     case  "Price":
-      coins.sort { Double($0.price) ?? 0 > Double($1.price) ?? 0 }
+      viewModel.coins.sort { Double($0.price) ?? 0 > Double($1.price) ?? 0 }
     case "24h Vol":
-      coins.sort { Int($0.the24HVolume) ?? 0 > Int($1.the24HVolume) ?? 0 }
+      viewModel.coins.sort { Int($0.the24HVolume) ?? 0 > Int($1.the24HVolume) ?? 0 }
     case "Market Cap":
-      coins.sort { Int($0.marketCap) ?? 0 > Int($1.marketCap) ?? 0 }
+      viewModel.coins.sort { Int($0.marketCap) ?? 0 > Int($1.marketCap) ?? 0 }
     case "Change":
-      coins.sort { Double($0.change) ?? 0 > Double($1.change) ?? 0 }
+      viewModel.coins.sort { Double($0.change) ?? 0 > Double($1.change) ?? 0 }
     case "List Order":
-      coins.sort{$0.listedAt < $1.listedAt}
+      viewModel.coins.sort{$0.listedAt < $1.listedAt}
     default:
       break
     }

@@ -26,6 +26,7 @@
 		3D9162492BE6C5F800441BF9 /* CoinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9162482BE6C5F800441BF9 /* CoinResponse.swift */; };
 		3D91624C2BE6C6BF00441BF9 /* CoinLogicProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D91624B2BE6C6BF00441BF9 /* CoinLogicProtocol.swift */; };
 		3D91C4932BE9A33C00EC04F0 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D91C4922BE9A33C00EC04F0 /* ChartView.swift */; };
+		3DA3C0512BEC5C850055A32F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3C0502BEC5C850055A32F /* HomeViewModel.swift */; };
 		3DAADFFD2BE811E5003A5C33 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3DAADFFC2BE811E5003A5C33 /* Kingfisher */; };
 		3DAAE0002BE81EC2003A5C33 /* Format+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAADFFF2BE81EC2003A5C33 /* Format+Extension.swift */; };
 		3DAAE0022BE83206003A5C33 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAAE0012BE83206003A5C33 /* UIView+Extension.swift */; };
@@ -54,6 +55,7 @@
 		3D9162482BE6C5F800441BF9 /* CoinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinResponse.swift; sourceTree = "<group>"; };
 		3D91624B2BE6C6BF00441BF9 /* CoinLogicProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinLogicProtocol.swift; sourceTree = "<group>"; };
 		3D91C4922BE9A33C00EC04F0 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		3DA3C0502BEC5C850055A32F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		3DAADFFF2BE81EC2003A5C33 /* Format+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Format+Extension.swift"; sourceTree = "<group>"; };
 		3DAAE0012BE83206003A5C33 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		3DAAE0032BE83321003A5C33 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				3D91624A2BE6C6A400441BF9 /* Network */,
 				3D9162452BE6BBB100441BF9 /* Constants */,
 				3D9162442BE6BBA500441BF9 /* Model */,
+				3DA3C04F2BEC5C6D0055A32F /* ViewModel */,
 				3D9162432BE6BAD000441BF9 /* Controller */,
 				3D9162422BE6BAB600441BF9 /* Core */,
 				3D91623E2BE6BA6500441BF9 /* Files */,
@@ -195,6 +198,14 @@
 				3D91C4922BE9A33C00EC04F0 /* ChartView.swift */,
 			);
 			path = ChartView;
+			sourceTree = "<group>";
+		};
+		3DA3C04F2BEC5C6D0055A32F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3DA3C0502BEC5C850055A32F /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		3DAADFFE2BE81E96003A5C33 /* Extensions */ = {
@@ -308,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DAAE0042BE83321003A5C33 /* DetailViewController.swift in Sources */,
+				3DA3C0512BEC5C850055A32F /* HomeViewModel.swift in Sources */,
 				3D2EC62C2BE6C88300B89F3F /* CoinLogic.swift in Sources */,
 				3D91622F2BE6B98300441BF9 /* HomeViewController.swift in Sources */,
 				3D2EC62E2BE6C9CB00B89F3F /* Webservice.swift in Sources */,
@@ -482,6 +494,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -509,6 +522,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
