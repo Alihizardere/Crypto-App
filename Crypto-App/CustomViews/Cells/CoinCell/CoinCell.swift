@@ -39,7 +39,7 @@ class CoinCell: UITableViewCell {
       changeLabel.textColor = .black
       return
     }
-    changeLabel.textColor = changeValue < 0 ? .red : .green
+    changeLabel.textColor = changeValue < 0 ? .red : .systemGreen
 
     let iconUrlString = coin.iconUrl.replacingOccurrences(of: "svg", with: "png")
     guard let iconUrl = URL(string: iconUrlString) else { return }
@@ -49,8 +49,8 @@ class CoinCell: UITableViewCell {
     cardView.addShadow()
   }
 
-  private func colorForChange(change: String) -> UIColor {
-    guard let changeValue = Double(change) else { return .black }
-    return changeValue < 0 ? .red :  .green
-  }
+//  private func colorForChange(change: String) -> UIColor {
+//    guard let changeValue = Double(change) else { return .black }
+//    return changeValue < 0 ? .red :  .systemGreen
+//  }
 }

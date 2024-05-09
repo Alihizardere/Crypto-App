@@ -16,8 +16,8 @@ class RankingCell: UICollectionViewCell {
   // MARK: - Lifecycle
   override func awakeFromNib() {
     super.awakeFromNib()
-    layer.borderWidth = 2
-    layer.borderColor =  UIColor.lightGray.cgColor
+    layer.borderWidth = 1
+    layer.borderColor =  UIColor.white.cgColor
     layer.cornerRadius = 10
   }
 

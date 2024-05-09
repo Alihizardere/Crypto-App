@@ -11,6 +11,7 @@ class HomeViewController: UIViewController {
   // MARK: - Properties
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var collectionView: UICollectionView!
+  @IBOutlet weak var headerTableView: UIView!
   var coins = [Coin]()
   let filterList = ["Price", "24h Vol", "Market Cap", "Change", "List Order"]
   var selectedIndex: IndexPath?
@@ -18,16 +19,8 @@ class HomeViewController: UIViewController {
   // MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    tableView.delegate = self
-    tableView.dataSource = self
-    tableView.showsVerticalScrollIndicator = false
-    navigationController?.navigationBar.shadowImage = UIImage()
-    tableView.register(UINib(nibName: CoinCell.identifier, bundle: nil), forCellReuseIdentifier: CoinCell.identifier)
-
-    collectionView.delegate = self
-    collectionView.dataSource = self
-    collectionView.register(UINib(nibName: RankingCell.identifier, bundle: nil), forCellWithReuseIdentifier: RankingCell.identifier)
-
+    setupUI()
+    
     CoinLogic.shared.getAllCoins { [weak self] result in
       guard let self else { return }
       switch result {
@@ -40,6 +33,30 @@ class HomeViewController: UIViewController {
         print("\(error.localizedDescription)")
       }
     }
+  }
+  private func setupUI(){
+    // MARK: - TableView
+    tableView.delegate = self
+    tableView.dataSource = self
+    tableView.register(UINib(nibName: CoinCell.identifier, bundle: nil), forCellReuseIdentifier: CoinCell.identifier)
+    tableView.showsVerticalScrollIndicator = false
+    headerTableView.layer.cornerRadius = 20
+    headerTableView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+
+    // MARK: - CollectionView
+    collectionView.delegate = self
+    collectionView.dataSource = self
+    collectionView.register(UINib(nibName: RankingCell.identifier, bundle: nil), forCellWithReuseIdentifier: RankingCell.identifier)
+
+    // MARK: - Background Color
+    let startPoint = CGPoint(x: 0, y: 0)
+    let endPoint = CGPoint(x: 1, y: 1)
+    view.setBackgroundGradient(colors: [.systemBlue.withAlphaComponent(0.7), .purple.withAlphaComponent(0.8)], startPoint: startPoint, endPoint: endPoint)
+
+    // MARK: - Navbar
+    navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+    navigationController?.navigationBar.shadowImage = UIImage()
+    navigationController?.navigationBar.isTranslucent = true;
   }
 }
 
@@ -88,12 +105,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     if let previousIndex = selectedIndex {
       if let previousCell = collectionView.cellForItem(at: previousIndex) as? RankingCell {
         previousCell.contentView.backgroundColor = .clear
-        previousCell.rankLabel.textColor = .label
+        previousCell.rankLabel.textColor = .black
       }
     }
     
     if let selectedCell = collectionView.cellForItem(at: indexPath) as? RankingCell{
-      selectedCell.contentView.backgroundColor = .purple.withAlphaComponent(0.7)
+      selectedCell.contentView.backgroundColor = #colorLiteral(red: 0.024102984, green: 0.1555764675, blue: 0.4802163243, alpha: 1)
       selectedCell.rankLabel.textColor = .white
     }
 

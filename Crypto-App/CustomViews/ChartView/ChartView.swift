@@ -8,6 +8,7 @@
 import UIKit
 
 class ChartView: UIView {
+
   var sparklineData: [Double] = [] {
     didSet { setNeedsDisplay() }
   }
@@ -43,7 +44,7 @@ class ChartView: UIView {
 
       let lineLayer = CAShapeLayer()
       lineLayer.path = linePath.cgPath
-      lineLayer.strokeColor = UIColor.blue.withAlphaComponent(0.7).cgColor
+      lineLayer.strokeColor = UIColor(named: "color")?.cgColor
       lineLayer.lineWidth = 2
       layer.addSublayer(lineLayer)
 
@@ -56,7 +57,7 @@ class ChartView: UIView {
 
     let gradientLayer = CAGradientLayer()
     gradientLayer.frame = bounds
-    gradientLayer.colors = [UIColor.blue.withAlphaComponent(0.2).cgColor, UIColor.white.cgColor]
+    gradientLayer.colors = [UIColor.blue.withAlphaComponent(0.3).cgColor, UIColor.white.withAlphaComponent(0.6).cgColor]
     gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
     gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
 

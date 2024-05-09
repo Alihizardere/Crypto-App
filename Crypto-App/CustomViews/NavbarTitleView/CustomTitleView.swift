@@ -11,16 +11,17 @@ class NavbarTitleView: UIView {
 
   var titleLabel: UILabel = {
     let label = UILabel()
-    label.font = UIFont.boldSystemFont(ofSize: 17)
+    label.font = UIFont.boldSystemFont(ofSize: 18)
     label.textAlignment = .center
+    label.textColor = .white
     return label
   }()
 
   var subtitleLabel: UILabel = {
     let label = UILabel()
-    label.font = UIFont.systemFont(ofSize: 14)
+    label.font = UIFont.systemFont(ofSize: 15)
     label.textAlignment = .center
-    label.textColor = UIColor.gray
+    label.textColor = .systemGray5
     return label
   }()
 

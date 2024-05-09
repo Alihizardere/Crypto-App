@@ -13,28 +13,49 @@ class DetailViewController: UIViewController {
   var selectedCoin: Coin?
   var sparklineDataStrings = [String]()
   var sparklineData: [Double] = []
+  @IBOutlet weak var containerView: UIView!
   @IBOutlet weak var highLabel: UILabel!
   @IBOutlet weak var lowLabel: UILabel!
+  @IBOutlet weak var marketCapLabel: UILabel!
+  @IBOutlet weak var volumeLabel: UILabel!
+  @IBOutlet weak var changeButton: UIButton!
   @IBOutlet weak var priceLabel: UILabel!
-  @IBOutlet weak var changeLabel: UILabel!
   @IBOutlet weak var chartView: ChartView!
+  @IBOutlet weak var staticsView: UIView!
   
   // MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    navigationController?.navigationBar.prefersLargeTitles = false
     setupSelectedCoin()
+    setupUI()
     convertSparklineData()
     setupDetailInfo()
     chartView.sparklineData = sparklineData
-
   }
 
   // MARK: - Functions
+  private func setupUI() {
+    navigationController?.navigationBar.tintColor = .white
+    containerView.layer.cornerRadius = 40
+    containerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+
+    let startPoint = CGPoint(x: 0, y: 0)
+    let endPoint = CGPoint(x: 1, y: 1)
+    view.setBackgroundGradient(colors: [.systemBlue.withAlphaComponent(0.7), .purple.withAlphaComponent(0.8)], startPoint: startPoint, endPoint: endPoint)
+
+    staticsView.setBackgroundGradient(colors: [.purple.withAlphaComponent(0.4), .systemBlue.withAlphaComponent(0.4)], startPoint:startPoint, endPoint: endPoint)
+    staticsView.layer.cornerRadius = 20
+    staticsView.clipsToBounds = true
+  }
+
   private func setupSelectedCoin(){
     guard let coin = selectedCoin else { return }
+
     priceLabel.text = "$\(Double(coin.price)?.formattedPrice(decimalCount: 5) ?? "0.0")"
-    changeLabel.text = "\(coin.change)%"
+    changeButton.setTitle("\(coin.change)%", for: .normal)
+    marketCapLabel.text = coin.marketCap
+    volumeLabel.text = coin.the24HVolume
+
     let titleView = NavbarTitleView(frame: CGRect(x: 0, y: 0, width: 200, height: 44))
     titleView.titleLabel.text = coin.name
     titleView.subtitleLabel.text =  coin.symbol
@@ -56,5 +77,4 @@ class DetailViewController: UIViewController {
       }
     }
   }
-
 }
