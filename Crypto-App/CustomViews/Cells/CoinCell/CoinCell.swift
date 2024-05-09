@@ -48,9 +48,4 @@ class CoinCell: UITableViewCell {
     shadowView.layer.cornerRadius = 30
     cardView.addShadow()
   }
-
-//  private func colorForChange(change: String) -> UIColor {
-//    guard let changeValue = Double(change) else { return .black }
-//    return changeValue < 0 ? .red :  .systemGreen
-//  }
 }

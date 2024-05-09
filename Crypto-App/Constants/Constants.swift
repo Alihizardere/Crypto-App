@@ -9,4 +9,5 @@ import Foundation
 
 struct Constants {
   static let coinURL: String = "https://psp-merchantpanel-service-sandbox.ozanodeme.com.tr/api/v1/dummy/coins"
+  static let filterList = ["Price", "24h Vol", "Market Cap", "Change", "List Order"]
 }

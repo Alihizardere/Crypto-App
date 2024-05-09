@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -19,10 +20,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mjA-zj-vc7">
-                        <rect key="frame" x="2" y="4" width="332" height="84"/>
+                        <rect key="frame" x="8" y="4" width="320" height="84"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Yes-AY-o4w">
-                                <rect key="frame" x="211" y="18.333333333333332" width="113" height="47.666666666666671"/>
+                                <rect key="frame" x="199" y="18.333333333333332" width="113" height="47.666666666666671"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ea-43-72n">
                                         <rect key="frame" x="0.0" y="0.0" width="43.333333333333336" height="20.333333333333332"/>
@@ -40,7 +41,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="(+$0.243)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xue-Di-ZF3">
-                                                <rect key="frame" x="43.666666666666679" y="0.0" width="69.333333333333314" height="19.333333333333332"/>
+                                                <rect key="frame" x="43.66666666666665" y="0.0" width="69.333333333333314" height="19.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -102,11 +103,11 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                 <constraints>
                     <constraint firstItem="mjA-zj-vc7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="9Ml-t3-6Ov"/>
-                    <constraint firstAttribute="trailing" secondItem="mjA-zj-vc7" secondAttribute="trailing" constant="2" id="BOH-lQ-bwr"/>
-                    <constraint firstItem="mjA-zj-vc7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="mvz-L0-Cxc"/>
+                    <constraint firstAttribute="trailing" secondItem="mjA-zj-vc7" secondAttribute="trailing" constant="8" id="BOH-lQ-bwr"/>
+                    <constraint firstItem="mjA-zj-vc7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="mvz-L0-Cxc"/>
                     <constraint firstAttribute="bottom" secondItem="mjA-zj-vc7" secondAttribute="bottom" constant="6" id="oNq-Xj-BJ1"/>
                 </constraints>
             </tableViewCellContentView>
@@ -127,6 +128,9 @@
         <namedColor name="labelColor">
             <color red="0.031372549019607843" green="0.098039215686274508" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

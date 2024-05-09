@@ -12,7 +12,6 @@ class HomeViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var collectionView: UICollectionView!
   @IBOutlet weak var headerTableView: UIView!
-  let filterList = ["Price", "24h Vol", "Market Cap", "Change", "List Order"]
   var viewModel = HomeViewModel()
   var selectedIndex: IndexPath?
 
@@ -94,30 +93,28 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    filterList.count
+    Constants.filterList.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RankingCell.identifier, for: indexPath) as! RankingCell
-    cell.rankLabel.text = filterList[indexPath.row]
+    cell.rankLabel.text = Constants.filterList[indexPath.row]
     return cell
   }
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     
     if let previousIndex = selectedIndex {
-      if let previousCell = collectionView.cellForItem(at: previousIndex) as? RankingCell {
+      if let previousCell = collectionView.cellForItem(at: previousIndex) {
         previousCell.contentView.backgroundColor = .clear
-        previousCell.rankLabel.textColor = .black
       }
     }
     
-    if let selectedCell = collectionView.cellForItem(at: indexPath) as? RankingCell{
+    if let selectedCell = collectionView.cellForItem(at: indexPath) {
       selectedCell.contentView.backgroundColor = #colorLiteral(red: 0.024102984, green: 0.1555764675, blue: 0.4802163243, alpha: 1)
-      selectedCell.rankLabel.textColor = .white
     }
 
-    let selectedFilter = filterList[indexPath.row]
+    let selectedFilter = Constants.filterList[indexPath.row]
 
     switch selectedFilter {
     case  "Price":
@@ -139,7 +136,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
   }
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    let filterName = filterList[indexPath.item]
+    let filterName = Constants.filterList[indexPath.item]
     let label = UILabel()
     label.text = filterName
     label.sizeToFit()

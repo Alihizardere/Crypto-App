@@ -22,7 +22,8 @@ class DetailViewController: UIViewController {
   @IBOutlet weak var priceLabel: UILabel!
   @IBOutlet weak var chartView: ChartView!
   @IBOutlet weak var staticsView: UIView!
-  
+  @IBOutlet weak var buyButton: UIButton!
+
   // MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -43,9 +44,12 @@ class DetailViewController: UIViewController {
     let endPoint = CGPoint(x: 1, y: 1)
     view.setBackgroundGradient(colors: [.systemBlue.withAlphaComponent(0.7), .purple.withAlphaComponent(0.8)], startPoint: startPoint, endPoint: endPoint)
 
-    staticsView.setBackgroundGradient(colors: [.purple.withAlphaComponent(0.3), .systemBlue.withAlphaComponent(0.4)], startPoint:startPoint, endPoint: endPoint)
+    staticsView.setBackgroundGradient(colors: [.blue.withAlphaComponent(0.2), .systemBlue.withAlphaComponent(0.4)], startPoint:startPoint, endPoint: endPoint)
     staticsView.layer.cornerRadius = 20
     staticsView.clipsToBounds = true
+
+    buyButton.layer.borderWidth = 2
+    buyButton.layer.borderColor = UIColor(named: "thirdColor")?.cgColor
   }
 
   private func setupSelectedCoin(){

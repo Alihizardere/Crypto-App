@@ -44,7 +44,7 @@ class ChartView: UIView {
 
       let lineLayer = CAShapeLayer()
       lineLayer.path = linePath.cgPath
-      lineLayer.strokeColor = UIColor(named: "color")?.cgColor
+      lineLayer.strokeColor = UIColor(named: "mainColor")?.cgColor
       lineLayer.lineWidth = 2
       layer.addSublayer(lineLayer)
 
