@@ -93,7 +93,7 @@ class DetailViewController: UIViewController {
       }
     }
   }
-   
+  
   // MARK: - Actions
   @IBAction func visitWebsiteButton(_ sender: UIButton) {
     guard let url = selectedCoin?.coinrankingUrl else { return }
