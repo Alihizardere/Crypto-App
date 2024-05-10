@@ -13,13 +13,7 @@ struct CoinResponse: Decodable {
 }
 
 struct CoinResults: Decodable {
-  let stats: CoinStats
   let coins: [Coin]
-}
-
-struct CoinStats: Decodable {
-  let total, totalCoins, totalMarkets, totalExchanges: Int
-  let totalMarketCap, total24hVolume: String
 }
 
 struct Coin: Decodable {

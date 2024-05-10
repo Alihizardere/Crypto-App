@@ -104,10 +104,10 @@
                                 <rect key="frame" x="0.0" y="104.33333333333331" width="393" height="664.66666666666674"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="woz-cx-YD0">
-                                        <rect key="frame" x="16" y="16" width="206.66666666666666" height="73.666666666666671"/>
+                                        <rect key="frame" x="16" y="16" width="198" height="73.666666666666671"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Hwg-oh-zSD">
-                                                <rect key="frame" x="0.0" y="0.0" width="206.66666666666666" height="34.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="198" height="34.333333333333336"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8V-pe-dzd">
                                                         <rect key="frame" x="0.0" y="0.0" width="115" height="34.333333333333336"/>
@@ -115,17 +115,19 @@
                                                         <color key="textColor" name="labelColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qj8-bZ-uUH">
-                                                        <rect key="frame" x="123" y="0.0" width="83.666666666666686" height="34.333333333333336"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1K-BW-0DY">
+                                                        <rect key="frame" x="123" y="0.0" width="75" height="34.333333333333336"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="filled" title="+3.62%">
-                                                            <color key="baseBackgroundColor" red="0.01176470588" green="0.54901960780000003" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </buttonConfiguration>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaF-5Y-NEO">
-                                                <rect key="frame" x="0.0" y="42.333333333333329" width="206.66666666666666" height="31.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="42.333333333333329" width="198" height="31.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
                                                 <color key="textColor" name="labelColor"/>
                                                 <nil key="highlightedColor"/>
@@ -360,7 +362,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="sZu-fM-qr9">
-                                        <rect key="frame" x="16" y="576.33333333333326" width="361" height="60.333333333333371"/>
+                                        <rect key="frame" x="16" y="580.33333333333326" width="361" height="60.333333333333371"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcc-HX-sY1">
                                                 <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="60.333333333333336"/>
@@ -388,14 +390,29 @@
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRL-91-yF3">
+                                        <rect key="frame" x="321" y="25.000000000000014" width="56" height="56"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="PK1-rJ-dst"/>
+                                            <constraint firstAttribute="width" constant="56" id="cGw-L8-PO7"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="linkColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <action selector="visitWebsiteButton:" destination="Lu7-pn-dhj" eventType="touchUpInside" id="3DB-VB-a7b"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="sZu-fM-qr9" secondAttribute="bottom" constant="28" id="02d-Xp-bXh"/>
+                                    <constraint firstAttribute="bottom" secondItem="sZu-fM-qr9" secondAttribute="bottom" constant="24" id="02d-Xp-bXh"/>
                                     <constraint firstAttribute="trailing" secondItem="E1T-I4-9Id" secondAttribute="trailing" constant="16" id="346-hJ-Zrc"/>
                                     <constraint firstItem="l1R-hk-oHX" firstAttribute="leading" secondItem="k1R-Ht-gRC" secondAttribute="leading" constant="16" id="7Li-af-OIv"/>
                                     <constraint firstItem="l1R-hk-oHX" firstAttribute="height" secondItem="E1T-I4-9Id" secondAttribute="height" multiplier="0.12" id="7RJ-Fk-Wch"/>
-                                    <constraint firstItem="sZu-fM-qr9" firstAttribute="top" secondItem="4lF-8X-XYj" secondAttribute="bottom" constant="8" id="9Lk-D1-niS"/>
+                                    <constraint firstItem="oRL-91-yF3" firstAttribute="centerY" secondItem="woz-cx-YD0" secondAttribute="centerY" id="8MW-1D-dn9"/>
+                                    <constraint firstItem="sZu-fM-qr9" firstAttribute="top" secondItem="4lF-8X-XYj" secondAttribute="bottom" constant="12" id="9Lk-D1-niS"/>
+                                    <constraint firstAttribute="trailing" secondItem="oRL-91-yF3" secondAttribute="trailing" constant="16" id="9y0-oK-EwH"/>
                                     <constraint firstItem="4lF-8X-XYj" firstAttribute="height" secondItem="k1R-Ht-gRC" secondAttribute="height" multiplier="0.28" id="FWN-uf-PH8"/>
                                     <constraint firstItem="E1T-I4-9Id" firstAttribute="top" secondItem="woz-cx-YD0" secondAttribute="bottom" constant="16" id="NAc-fJ-sez"/>
                                     <constraint firstItem="sZu-fM-qr9" firstAttribute="leading" secondItem="k1R-Ht-gRC" secondAttribute="leading" constant="16" id="Ptu-LG-lFi"/>
@@ -428,7 +445,7 @@
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="BdW-zG-Liz"/>
                     <connections>
                         <outlet property="buyButton" destination="1Yx-lx-3xa" id="bpD-qc-neS"/>
-                        <outlet property="changeButton" destination="Qj8-bZ-uUH" id="Nyg-4b-Wrr"/>
+                        <outlet property="changeButton" destination="P1K-BW-0DY" id="S5m-ac-nOA"/>
                         <outlet property="chartView" destination="E1T-I4-9Id" id="Lxq-ha-3by"/>
                         <outlet property="containerView" destination="k1R-Ht-gRC" id="3tH-2N-UQT"/>
                         <outlet property="highLabel" destination="nV9-b4-ErD" id="6kx-rw-8gW"/>
@@ -437,6 +454,7 @@
                         <outlet property="priceLabel" destination="MaF-5Y-NEO" id="IuH-aG-3eQ"/>
                         <outlet property="staticsView" destination="4lF-8X-XYj" id="Aqe-H0-xqa"/>
                         <outlet property="volumeLabel" destination="8Iu-Uq-8My" id="OJ3-Ov-QBe"/>
+                        <outlet property="websiteButton" destination="oRL-91-yF3" id="heg-CV-Wev"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="maj-iB-7P1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -474,6 +492,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="55f-af-iJU" customClass="CustomTabBar" customModule="Crypto_App" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VEO-6W-F9h">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="color"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -518,7 +537,7 @@
             <color red="0.031372549019607843" green="0.098039215686274508" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="secondaryColor">
-            <color red="0.66745740180000002" green="0.77282243969999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.66666666666666663" green="0.77254901960784317" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="thirdColor">
             <color red="0.23274192685219405" green="0.33294658653706177" blue="0.65485963983050843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -526,6 +545,9 @@
         <namedColor name="yedek">
             <color red="0.23274192685219405" green="0.33294658653706177" blue="0.65485963983050843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

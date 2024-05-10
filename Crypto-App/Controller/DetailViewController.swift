@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WebKit
 
 class DetailViewController: UIViewController {
 
@@ -22,6 +23,7 @@ class DetailViewController: UIViewController {
   @IBOutlet weak var priceLabel: UILabel!
   @IBOutlet weak var chartView: ChartView!
   @IBOutlet weak var staticsView: UIView!
+  @IBOutlet weak var websiteButton: UIButton!
   @IBOutlet weak var buyButton: UIButton!
 
   // MARK: - Lifecycle
@@ -50,15 +52,25 @@ class DetailViewController: UIViewController {
 
     buyButton.layer.borderWidth = 2
     buyButton.layer.borderColor = UIColor(named: "thirdColor")?.cgColor
+    websiteButton.setTitle("", for: .normal)
+    websiteButton.setImage(UIImage(named: "websiteIcon")?.withRenderingMode(.alwaysTemplate), for: .normal)
+    websiteButton.tintColor = .third
   }
 
   private func setupSelectedCoin(){
     guard let coin = selectedCoin else { return }
 
-    priceLabel.text = "$\(Double(coin.price)?.formattedPrice(decimalCount: 5) ?? "0.0")"
+    guard let price = Double(coin.price),
+          let changeValue = Double(coin.change),
+          let marketCap = Double(coin.marketCap),
+          let volume = Double(coin.the24HVolume) else {
+      return
+    }
+    priceLabel.text = "$\(price.formattedPrice(decimalCount: 5))"
     changeButton.setTitle("\(coin.change)%", for: .normal)
-    marketCapLabel.text = coin.marketCap
-    volumeLabel.text = coin.the24HVolume
+    marketCapLabel.text = "$\(marketCap.formattedPrice(decimalCount: 0))"
+    volumeLabel.text = "$\(volume.formattedPrice(decimalCount: 0))"
+    changeButton.backgroundColor = changeValue < 0 ? UIColor(named: "customRed") : UIColor(named: "customGreen")
 
     let titleView = NavbarTitleView(frame: CGRect(x: 0, y: 0, width: 200, height: 44))
     titleView.titleLabel.text = coin.name
@@ -70,8 +82,8 @@ class DetailViewController: UIViewController {
   private func setupDetailInfo(){
     let maxValue = sparklineData.max() ?? 0
     let minValue = sparklineData.min() ?? 0
-    highLabel.text = "\(maxValue.formattedPrice(decimalCount: 2))"
-    lowLabel.text = "\(minValue.formattedPrice(decimalCount: 2))"
+    highLabel.text = "$\(maxValue.formattedPrice(decimalCount: 2))"
+    lowLabel.text = "$\(minValue.formattedPrice(decimalCount: 2))"
   }
 
   private func convertSparklineData() {
@@ -80,5 +92,17 @@ class DetailViewController: UIViewController {
         sparklineData.append(doubleValue)
       }
     }
+  }
+   
+  // MARK: - Actions
+  @IBAction func visitWebsiteButton(_ sender: UIButton) {
+    guard let url = selectedCoin?.coinrankingUrl else { return }
+    let customWebView = WebView(frame: UIScreen.main.bounds)
+    customWebView.webUrl = url
+    customWebView.navigationController = self.navigationController
+    customWebView.tabbarController = self.tabBarController
+    navigationController?.setNavigationBarHidden(true, animated: true)
+    tabBarController?.tabBar.isHidden = true
+    view.addSubview(customWebView)
   }
 }

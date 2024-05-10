@@ -17,7 +17,8 @@ class CoinCell: UITableViewCell {
   @IBOutlet weak var symbolLabel: UILabel!
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var priceLabel: UILabel!
-  @IBOutlet weak var changeLabel: UILabel!
+  @IBOutlet weak var changePercent: UILabel!
+  @IBOutlet weak var changePrice: UILabel!
   @IBOutlet weak var cardView: UIView!
 
   // MARK: - Lifecycle
@@ -33,14 +34,26 @@ class CoinCell: UITableViewCell {
   func configure(coin: Coin){
     nameLabel.text = coin.name
     symbolLabel.text = coin.symbol
-    priceLabel.text = "$\(Double(coin.price)?.formattedPrice(decimalCount: 5) ?? "0.0")"
-    changeLabel.text = "\(coin.change)%"
-    guard let changeValue = Double(coin.change) else  {
-      changeLabel.textColor = .black
-      return
-    }
-    changeLabel.textColor = changeValue < 0 ? .red : .systemGreen
+    changePercent.text = "\(coin.change)%"
 
+    // MARK: - Format operations
+    if let doublePrice = Double(coin.price) {
+      let formattedPrice = doublePrice.formattedPrice(decimalCount: 5)
+      priceLabel.text = "$\(formattedPrice)"
+
+      var changeValue: Double = 0.0
+      if let changePercent = Double(coin.change) {
+        changeValue = doublePrice * changePercent / 100
+      }
+      let formattedChangePrice = changeValue.formattedPrice(decimalCount: 4)
+      changePrice.text = "$\(formattedChangePrice)"
+
+      let changeColor = changeValue < 0 ? UIColor(named: "customRed") : UIColor(named: "customGreen")
+      changePercent.textColor = changeColor
+      changePrice.textColor = changeColor
+    }
+    
+    // MARK: - Image Setup
     let iconUrlString = coin.iconUrl.replacingOccurrences(of: "svg", with: "png")
     guard let iconUrl = URL(string: iconUrlString) else { return }
     coinImageView.kf.setImage(with: iconUrl)

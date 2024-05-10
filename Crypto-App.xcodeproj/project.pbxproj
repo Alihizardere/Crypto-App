@@ -34,6 +34,7 @@
 		3DAAE00B2BE83B57003A5C33 /* RankingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAAE0092BE83B57003A5C33 /* RankingCell.swift */; };
 		3DAAE00C2BE83B57003A5C33 /* RankingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DAAE00A2BE83B57003A5C33 /* RankingCell.xib */; };
 		3DB9F3A72BED29260086A1EA /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB9F3A62BED29260086A1EA /* CustomTabBar.swift */; };
+		3DF158222BEE32C000AACFA7 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF158212BEE32C000AACFA7 /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		3DAAE0092BE83B57003A5C33 /* RankingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCell.swift; sourceTree = "<group>"; };
 		3DAAE00A2BE83B57003A5C33 /* RankingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankingCell.xib; sourceTree = "<group>"; };
 		3DB9F3A62BED29260086A1EA /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		3DF158212BEE32C000AACFA7 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		3D2EC6362BE6D02300B89F3F /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				3DF158202BEE32B000AACFA7 /* WebView */,
 				3DB9F3A52BED28DE0086A1EA /* CustomTabBar */,
 				3D91C4942BE9A34F00EC04F0 /* ChartView */,
 				3D0DDF382BE8CAF400C63676 /* NavbarTitleView */,
@@ -247,6 +250,14 @@
 			path = CustomTabBar;
 			sourceTree = "<group>";
 		};
+		3DF158202BEE32B000AACFA7 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				3DF158212BEE32C000AACFA7 /* WebView.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -330,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DAAE0042BE83321003A5C33 /* DetailViewController.swift in Sources */,
+				3DF158222BEE32C000AACFA7 /* WebView.swift in Sources */,
 				3DA3C0512BEC5C850055A32F /* HomeViewModel.swift in Sources */,
 				3DB9F3A72BED29260086A1EA /* CustomTabBar.swift in Sources */,
 				3D2EC62C2BE6C88300B89F3F /* CoinLogic.swift in Sources */,
